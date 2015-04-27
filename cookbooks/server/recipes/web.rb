@@ -8,7 +8,7 @@ end
 directory '/var/www' do
   owner 'web'
   group 'web'
-  mode '0664'
+  mode '0775'
 end
 
 attributes = {
