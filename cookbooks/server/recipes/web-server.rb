@@ -1,5 +1,11 @@
 include_recipe 'nginx'
 
+directory '/var/www' do
+  owner 'web'
+  group 'web'
+  mode '0664'
+end
+
 attributes = {
   name: 'wwdchike',
   path: '/var/www/wwdchike.com',
