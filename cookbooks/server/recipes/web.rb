@@ -15,7 +15,7 @@ end
 
 node[:apps].each do |app|
   template "/etc/nginx/sites-available/#{app[:name]}" do
-    source 'ruby-app.conf'
+    source 'ruby-app.conf.erb'
     variables app
     notifies :reload, 'service[nginx]'
   end

@@ -5,7 +5,20 @@
   "apps": [
     {
       "name": "wwdchike",
-      "hosts": "wwdchike.com *.wwdchike.com"
+      "domains": [
+        "wwdchike.com",
+        "*.wwdchike.com"
+      ]
+    },
+    {
+      "name": "soffes",
+      "domains": [
+        "soff.es",
+        "*.soff.es"
+      ],
+      "redis": {
+        "database": 1
+      }
     }
   ]
 }

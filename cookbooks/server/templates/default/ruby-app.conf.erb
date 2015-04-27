@@ -4,7 +4,7 @@ upstream <%= @name %> {
 
 server {
   listen 80;
-  server_name <%= @hosts %>;
+  server_name <%= @domains.join(' ') %>;
   root /var/www/<%= @name %>/public;
 
   location / {
