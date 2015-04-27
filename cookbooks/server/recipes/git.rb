@@ -10,7 +10,7 @@ end
 directory '/home/git/.ssh' do
   owner 'git'
   group 'git'
-  mode '0775'
+  mode '0700'
 end
 
 all_keys = data_bag(:users).map { |u| data_bag_item(:users, u)["ssh_keys"] }.flatten.map {|ssh| ssh["public_key"]}
