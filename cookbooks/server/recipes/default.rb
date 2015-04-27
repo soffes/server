@@ -6,4 +6,4 @@
 #
 
 include_recipe 'server::users'
-include_recipe 'server::web
+include_recipe 'server::web'
