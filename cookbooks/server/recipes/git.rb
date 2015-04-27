@@ -7,14 +7,14 @@ group 'git' do
   members ['git']
 end
 
-directory "/home/git/.ssh" do
-  mode '0700'
-  owner 'git'
+directory '/home/git/.ssh' do
+  owner 'git'
   group 'git'
+  mode '0775'
 end
 
 all_keys = data_bag(:users).map { |u| data_bag_item(:users, u)["ssh_keys"] }.flatten.map {|ssh| ssh["public_key"]}
-template "/home/git/.ssh/authorized_keys" do
+template '/home/git/.ssh/authorized_keys' do
   mode '0600'
   owner 'git'
   group 'git'
@@ -25,7 +25,7 @@ directory '/var/git' do
   owner 'git'
   group 'git'
   mode '0775'
-  supports manage_home: true
+  supports :manage_home => true
 end
 
 node[:apps].each do |app|
