@@ -5,12 +5,5 @@
 # Copyright (C) 2015 Sam Soffes
 #
 
-group 'admin' do
-end
-
-user 'soffes' do
-  group 'admin'
-  shell '/bin/bash'
-end
-
-include_recipe 'sudo'
+include_recipe 'users'
+include_recipe 'web-server'

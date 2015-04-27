@@ -7,3 +7,4 @@ long_description 'Installs/Configures server'
 version          '0.1.0'
 
 depends 'sudo'
+depends 'nginx'
