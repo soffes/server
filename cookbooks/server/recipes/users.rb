@@ -1,16 +1,3 @@
-user 'admin' do
-  shell '/bin/bash'
-end
-
-group 'admin' do
-  members ['admin']
-end
-
-group 'web' do
-  append true
-  members ['admin']
-end
-
 include_recipe 'sudo'
 
 # data_bag(:users).each do |key|
