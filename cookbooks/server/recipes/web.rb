@@ -1,5 +1,9 @@
 include_recipe 'nginx'
 
+group 'web' do
+  members ['nginx']
+end
+
 directory '/var/www' do
   owner 'web'
   group 'web'
