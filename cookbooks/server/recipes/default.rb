@@ -8,3 +8,4 @@
 include_recipe 'server::users'
 include_recipe 'server::web'
 include_recipe 'server::ruby'
+include_recipe 'server::redis'
