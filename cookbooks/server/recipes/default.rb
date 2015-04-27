@@ -5,5 +5,5 @@
 # Copyright (C) 2015 Sam Soffes
 #
 
-include_recipe 'users'
-include_recipe 'web-server'
+include_recipe 'server::users'
+include_recipe 'server::web
