@@ -1,6 +1,7 @@
 include_recipe 'nginx'
 
 group 'web' do
+  append true
   members ['nginx']
 end
 
