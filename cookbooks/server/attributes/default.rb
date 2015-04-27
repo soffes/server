@@ -1,3 +1,2 @@
-default['authorization']['sudo']['passwordless'] = true
-default['authorization']['sudo']['groups'] = ['admin']
-default['authorization']['sudo']['users'] = ['soffes']
+node.override['authorization']['sudo']['passwordless'] = true
+node.override['authorization']['sudo']['groups'] = ['admin']
