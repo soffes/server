@@ -1,8 +1,10 @@
 include_recipe 'nginx'
 
+user 'web'
+
 group 'web' do
   append true
-  members ['nginx']
+  members ['web', 'nginx']
 end
 
 directory '/var/www' do
@@ -11,18 +13,14 @@ directory '/var/www' do
   mode '0775'
 end
 
-attributes = {
-  name: 'wwdchike',
-  path: '/var/www/wwdchike.com',
-  hosts: 'wwdchike.com *.wwdchike.com'
-}
+node[:apps].each do |app|
+  template "/etc/nginx/sites-available/#{app[:name]}" do
+    source 'ruby-app.conf'
+    variables app
+    notifies :reload, 'service[nginx]'
+  end
 
-template "/etc/nginx/sites-available/#{attributes[:name]}" do
-  source 'ruby-app.conf'
-  variables attributes
-  notifies :reload, 'service[nginx]'
-end
-
-nginx_site attributes[:name] do
-  action :enable
+  nginx_site app[:name] do
+    action :enable
+  end
 end
