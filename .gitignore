@@ -15,3 +15,4 @@ Gemfile.lock
 bin/*
 .bundle/*
 
+berks-cookbooks/server
