@@ -1,3 +1,3 @@
-node['authorization']['sudo']['passwordless'] = true
-node['authorization']['sudo']['groups'] = ['admin']
-node['authorization']['sudo']['users'] = ['soffes']
+default['authorization']['sudo']['passwordless'] = true
+default['authorization']['sudo']['groups'] = ['admin']
+default['authorization']['sudo']['users'] = ['soffes']
