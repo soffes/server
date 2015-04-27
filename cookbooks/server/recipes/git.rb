@@ -1,6 +1,8 @@
 package 'git'
 
-user 'git'
+user 'git' do
+  supports :manage_home => true
+end
 
 group 'git' do
   append true
@@ -21,16 +23,9 @@ template '/home/git/.ssh/authorized_keys' do
   variables :keys => all_keys
 end
 
-directory '/var/git' do
-  owner 'git'
-  group 'git'
-  mode '0775'
-  supports :manage_home => true
-end
-
 node[:apps].each do |app|
-  path = "/var/git/#{app[:name]}.git"
-  execute 'Create git repo' do
+  path = "/home/git/#{app[:name]}.git"
+  execute 'Create git repository' do
     command "git init --bare #{path}"
     not_if { ::File.exists?(path) }
     group 'git'
