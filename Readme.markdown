@@ -1,5 +1,8 @@
-# Server configuration
+# server-cookbook
 
-Some [Chef](http://chef.io) stuff. I don't know.
+## Running locally
 
-![I have no idea what I'm doing.jpg](http://ak-hdl.buzzfed.com/static/2014-10/26/6/enhanced/webdr08/enhanced-14836-1414320930-8.jpg)
+1. Install [Vagrant](http://www.vagrantup.com/downloads)
+2. Install [Chef DK](https://downloads.chef.io/chef-dk)
+3. `vagrant plugin install vagrant-berkshelf`
+4. `vagrant plugin install vagrant-omnibus`

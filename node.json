@@ -2,6 +2,17 @@
   "run_list": [
     "recipe[server::default]"
   ],
+  "users": [
+    {
+      "username": "soffes",
+      "ssh_keys": [
+        {
+          "name": "MacBook Pro",
+          "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9cMZfwDSEW7hZH6DycH9c3BfRMFc8NQ3Z8XffNRqUHPBno4G3f20vOPOLmAGFnWtZ3/Kl9QyTjSqk7LrQtZz+fDnVTgAORoLcPHn9gDRTV5jdMV7ToqYhpWQ/4IfvXvnMEc9seL8ass1gfXr/Q1fVZXzo2PRbXHHejg1vS6OG+5qnvGRmOUcSPZae/TWesKufDphWfRr1FN1JOxJsHfHO/5sHBjWnkHvFRPPkQ7Md+EwzQGWQBtlcSGysT0gqUuRg9xdWs2PtrEJRJiVwntvWaD2I6DQQ6A69rg5Z0JebvMZgN5+lwH6d+McUouycQhj4/hzkV7fhEDOKxGlOmpZB server@Sams-MacBook-Pro.local"
+        }
+      ]
+    }
+  ],
   "apps": [
     {
       "name": "wwdchike",
